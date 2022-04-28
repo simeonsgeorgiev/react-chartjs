@@ -1,5 +1,8 @@
 ## How To Run
 Create an Atlas URI connection parameter in `server/config.env` with your Atlas URI:
+
+Note: The server is using mongodb atlas `sample_weatherdata` for charts.
+
 ```
 ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 PORT=5000

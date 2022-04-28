@@ -26,7 +26,6 @@ ChartJS.register(
 export default function RecordList() {
  const [records, setRecords] = useState([]);
  
- // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
      const response = await fetch(`http://localhost:5000/record/`);
@@ -45,16 +44,6 @@ export default function RecordList() {
  
    return;
  }, [records.length]);
- 
- // This method will delete a record
- async function deleteRecord(id) {
-   await fetch(`http://localhost:5000/${id}`, {
-     method: "DELETE"
-   });
- 
-   const newRecords = records.filter((el) => el._id !== id);
-   setRecords(newRecords);
- }
 
     const data = {
      labels: records.map((record) => record.callLetters),
@@ -110,7 +99,6 @@ export default function RecordList() {
      ],
    };
  
- // This following section will display the table with the records of individuals.
  return (
    <div>
      <h3>Record Charts</h3>
